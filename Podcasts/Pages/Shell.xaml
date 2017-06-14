@@ -342,9 +342,11 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Button Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="FullscreenButton" Tag="" x:Name="FullScreen" Click="FullScreen_Click" Grid.Row="0" Margin="10"></Button>
                     <Button Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="VisibilityButton" Tag="" x:Name="VisibilityButton" Click="Visibility_Click" Grid.Row="1" Margin="10"></Button>
+                    <Button Style="{StaticResource ImageAndTextButtonStyle}" x:Uid="MiniViewButton" Tag="" x:Name="MiniViewButton" Click="MiniView_Click" Grid.Row="2" Margin="10"></Button>
                 </Grid>
             </Flyout>
         </Grid.Resources>
@@ -392,7 +394,8 @@
             </controls:HamburgerMenu>
             <Grid Background="Transparent" Visibility="Collapsed" Grid.Row="0" Width="10" x:Name="SlidingGrid" HorizontalAlignment="Left" ManipulationMode="TranslateX" ManipulationStarted="SlidingGrid_ManipulationStarted" ManipulationDelta="SlidingGrid_ManipulationDelta" ManipulationCompleted="SlidingGrid_ManipulationCompleted"></Grid>
             <Grid Visibility="Collapsed" Grid.Row="0" x:Name="VideoPlayerGrid" Background="{StaticResource Background}">
-                <MediaPlayerElement x:Name="mediaPlayerElement" AreTransportControlsEnabled="False" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PointerPressed="mediaPlayerElement_PointerPressed"/>
+                <MediaPlayerElement x:Name="mediaPlayerElement" AreTransportControlsEnabled="False" Stretch="Uniform" PointerPressed="mediaPlayerElement_PointerPressed">
+                </MediaPlayerElement>
             </Grid>
             <Grid Grid.Row="1" Background="{StaticResource Accent}" x:Name="RootControlGrid">
                 <Grid Visibility="{Binding CurrentEpisode, Converter={StaticResource NullToVisibility}}">

@@ -411,7 +411,7 @@ Ich möchte (ab)spielen...</value>
     <value>Start</value>
   </data>
   <data name="Stop" xml:space="preserve">
-    <value>Stopp</value>
+    <value>Stop</value>
   </data>
   <data name="ClearButton.Content" xml:space="preserve">
     <value>Zurücksetzen</value>
@@ -595,5 +595,8 @@ Ich möchte (ab)spielen...</value>
   </data>
   <data name="RepoIssues.Content" xml:space="preserve">
     <value>Fragen</value>
+  </data>
+  <data name="MiniViewButton.Content" xml:space="preserve">
+    <value>Zur Mini View wechseln</value>
   </data>
 </root>

@@ -19,6 +19,8 @@ using Windows.Foundation.Metadata;
 using System.Linq;
 using Microsoft.Graph;
 using Microsoft.Toolkit.Uwp.UI.Controls;
+using Windows.UI.ViewManagement;
+using Windows.Devices.Bluetooth;
 
 namespace Podcasts
 {
@@ -43,6 +45,9 @@ namespace Podcasts
             // Navigation
             GlobalStateManager.OnSelectedMenuIndexChanged = OnSelectedMenuIndexChanged;
             GlobalStateManager.OnGetSelectedMenuIndexRequired = OnGetSelectedMenuIndexRequired;
+
+            //BluetoothDeviceId FromId(String deviceId)
+            BluetoothDevice.GetDeviceSelectorFromDeviceName
 
             if (CoreTools.IsRunningOnMobile)
             {
@@ -101,6 +106,10 @@ namespace Podcasts
 
         private void MediaPlayerHost_OnVideoPlayerEngaged()
         {
+            if (ApplicationView.GetForCurrentView().IsViewModeSupported(ApplicationViewMode.CompactOverlay))
+            {
+                MiniViewButton.Visibility = Visibility.Visible;
+            }
             VideoPlayerGrid.Visibility = Visibility.Visible;
             VideoControls.Visibility = Visibility.Visible;
             CoreTools.ActivateDisplay();
@@ -353,6 +362,7 @@ namespace Podcasts
         void ShowFullscreenVideo(bool state)
         {
             mediaPlayerElement.IsFullWindow = state;
+            mediaPlayerElement.AreTransportControlsEnabled = state;
             if (CoreTools.IsRunningOnMobile)
             {
                 if (!state)
@@ -881,6 +891,15 @@ namespace Podcasts
             else {
                 VisualStateManager.GoToState(this, "Full", true);
             }
+        }
+
+        private async void MiniView_Click(object sender, RoutedEventArgs e)
+        {
+            //bool modeSwitched = await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.CompactOverlay);
+            ViewModePreferences compactOptions = ViewModePreferences.CreateDefault(ApplicationViewMode.CompactOverlay);
+            compactOptions.CustomSize = new Windows.Foundation.Size(320, 200);
+            //bool modeSwitched = await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.Default, compactOptions);
+            bool modeSwitched = await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.CompactOverlay, compactOptions);
         }
     }
 }

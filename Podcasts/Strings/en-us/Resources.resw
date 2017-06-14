@@ -596,4 +596,7 @@ You should play a podcast...</value>
   <data name="ContributorsText.Text" xml:space="preserve">
     <value>Special thanks to all people who helped developing this application:</value>
   </data>
+  <data name="MiniViewButton.Content" xml:space="preserve">
+    <value>Play in mini view</value>
+  </data>
 </root>
