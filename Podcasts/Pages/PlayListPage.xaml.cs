@@ -34,6 +34,7 @@ namespace Podcasts
             Playlist.CurrentPlaylist.Entries.CollectionChanged += Entries_CollectionChanged;
 
             PlaylistListView.DataContext = Playlist.CurrentPlaylist;
+            
             GlobalStateManager.SelectedMenuIndex = 2;
 
             UpdateTitleInfos();
