@@ -88,6 +88,7 @@ namespace Podcasts
 
             var source = new[] {
                 new { value = 5, label = "5" },
+                new { value = 7, label = "7" },
                 new { value = 10, label = "10" },
                 new { value = 20, label = "20" },
                 new { value = 30, label = "30" },
