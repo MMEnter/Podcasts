@@ -137,6 +137,7 @@
     <Compile Include="Notifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\OneDriveSettings.cs" />
+    <Compile Include="Settings\RoamingSettings.cs" />
     <Compile Include="StringsHelper.cs">
       <DependentUpon>StringsHelper.tt</DependentUpon>
       <AutoGen>True</AutoGen>
