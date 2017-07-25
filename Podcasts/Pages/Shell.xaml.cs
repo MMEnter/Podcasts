@@ -47,7 +47,7 @@ namespace Podcasts
             GlobalStateManager.OnGetSelectedMenuIndexRequired = OnGetSelectedMenuIndexRequired;
 
             //BluetoothDeviceId FromId(String deviceId)
-            BluetoothDevice.GetDeviceSelectorFromDeviceName
+            //BluetoothDevice.GetDeviceSelectorFromDeviceName
 
             if (CoreTools.IsRunningOnMobile)
             {
